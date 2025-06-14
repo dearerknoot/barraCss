@@ -18,41 +18,75 @@
             border-radius: 50px;
             margin-left: 500px;
             display: flex;
+            border-style: solid;
         }
         .redl{
             width: 35%;
             height: 100%;
             background-color: red;
             border-radius: 50px 0 0 50px;
+            position: relative;
+            z-index: 1;
         }
         .redr{
             width: 35%;
             height: 100%;
             background-color: red;
             border-radius: 0 50px 50px 0;
+            position: relative;
+            z-index: 1;
         }
         .yel{
             width: 25%;
             height: 100%;
             background-color: yellow;
-            
+            z-index: 1;
+            position: relative;
         }
         .gre{
             width: 10%;
             height: 100%;
             background-color: green;
+            z-index: 1;
+            position: relative; 
+        }
+        .vbar{
+            width: 20px;
+            height: 70px;
+            background-color: black;
+            position: absolute;
+            z-index: 10;
+            animation: vbarR 1s infinite linear alternate;
+        }
+        .btn{
+            width: 200px;
+            height: 50px;
+            border-radius: 50px;
+            margin-top: 50px;
+            margin-right: 70px;
+        }
+        @keyframes vbarR {
+            from {
+                margin-left: 50px;
+            }
+            to{
+                margin-left: 750px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="main">
         <div class="barra">
+            <div class="vbar"></div>
             <div class="redl"></div>
             <div class="yel"></div>
             <div class="gre"></div>
             <div class="yel"></div>
             <div class="redr"></div>
         </div>
+        <button onclick="pararVbar()" class="btn">ATACAR</button>
     </div>
 </body>
+<script src="index.js"></script>
 </html>
